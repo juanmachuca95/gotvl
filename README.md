@@ -25,7 +25,7 @@ Generate the translation files. You will need a translations folder where all `a
 Finally, you can use this Makefile for the generation of the translation files that the middleware will consume.
 
 
-```bash
+```makefile
 # Generate translations (en, es)
 # Create by definitions
 .PHONY: init
@@ -72,3 +72,7 @@ We welcome contributions to Gotvl. To contribute, please follow these steps:
 6. Open a pull request to this repository with a detailed description of your changes
 
 Please ensure your code follows the Go coding style guidelines and that all tests pass before submitting a pull request. Thank you for contributing to Gotvl!
+
+## License
+
+This project is licensed under the terms of the MIT license. See [LICENSE](LICENSE) for more information.
