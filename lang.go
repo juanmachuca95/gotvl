@@ -23,8 +23,9 @@ type Lang struct {
 	Path string
 }
 
+// Note: you need folder translations into your project
 func NewLang(tag language.Tag) Lang {
-	path := fmt.Sprintf("active.%s.toml", strings.Split(tag.String(), "-")[0])
+	path := fmt.Sprintf("translations/active.%s.toml", strings.Split(tag.String(), "-")[0])
 	return Lang{
 		Tag:  tag,
 		Lang: tag.String(),
