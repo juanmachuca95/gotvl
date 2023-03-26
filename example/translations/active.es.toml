@@ -1,0 +1,15 @@
+["Error unexpected"]
+hash = "sha1-c4de2d06280af790358602b127b52443a031fdc9"
+one = "Error inesperado"
+other = "Error inesperado"
+
+["Request malformed"]
+hash = "sha1-888572efe727b225487d04510f88767c4cb5929f"
+one = "Falló al vincular la solicitud"
+other = "Falló al vincular la solicitud"
+
+
+[OK]
+hash = "sha1-3c44e60f668525352909fc17dc5d4ce4c3fbe4f6"
+one = "Todo bien 🚀"
+other = "Todo bien 👍"

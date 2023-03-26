@@ -1,0 +1,11 @@
+["Error unexpected"]
+one = "Error unexpected"
+other = "Error unexpected"
+
+[OK]
+one = "OK 200"
+other = "OK 200"
+
+["Request malformed"]
+one = "Failed to binding request"
+other = "Failed to binding request"
