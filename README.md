@@ -1,31 +1,31 @@
 # Gotvl
+Gotvl is a simple abstraction for message translation and internationalization `(i18n)` for Spanish and English languages (en, es), aimed at abstracting the implementation logic. It includes the necessary middleware for routing and default validation for Gin Validator. Note that you need to use `Accept-Language` in routes where this middleware is used.
 
-Gotvl es una simple abstracción para la traducción de mensajes y la incorporación de internacionalización <b>i18n</b> para los idiomas español e ingles `(en, es)` con el fin de abstraer la logica de la implementación. Incluyendo el middleware necesario para la ruta y validaciones por default para `gin validator`. Es importante tener en cuenta que necesita utilizar `Accept-Language` en las rutas donde este middleware sea utilizado
 
-
-## Instalación
+## Installation
 
 ```go
 go get -u github.com/juanmachuca95/gotvl
 ```
 
-Puedes ver un ejemplo practico en [example]()
+You can see a practical example in the [example](https://github.com/juanmachuca95/gotvl/tree/main/example) directory. 
 
 
-## Requerimientos
-Este paquete solo soporta el framework de gin, por lo que solo soporta este enrutador.
+## Requirements
+This package only supports the Gin framework, so it only supports this router.
 
-## Uso
+## Usage
 
-Este paquete utiliza [Gin][https://github.com/gin-gonic/gin] para la obtención de `tvl`, esto es la traducción para el idioma especificado, las validación por defecto por idioma y el localizador de mensajes para la internacionalización en dos idiomas.
+This package uses [Gin](https://github.com/gin-gonic/gin) to obtain TVL, i.e. the translation for the specified language, default validation by language, and message locator for i18n in two languages.
 
-1. Es necesario tener instalada la herramienta [goi18n](https://github.com/nicksnyder/go-i18n#command-goi18n) para la generación de archivos. 
+It is necessary to have the [goi18n](https://github.com/nicksnyder/go-i18n#command-goi18n) tool installed for file generation.
 
-2. Generar los archivos de traducción.  Necesitarás una carpeta translations donde todos los archivos `active.*.toml` estarán alojados. Si no lo tienes, puedes utilizar el <b>Makefile</b> que este repositorio provee más abajo.
+Generate the translation files. You will need a translations folder where all `active.*.toml` files will be hosted. If you don't have it, you can use the `Makefile` provided by this repository below.
 
-Finalmente puedes utilizar este makefile para generación de los archivos de traducción que consumira el middleware.
+Finally, you can use this Makefile for the generation of the translation files that the middleware will consume.
 
-```makefile
+
+```bash
 # Generate translations (en, es)
 # Create by definitions
 .PHONY: init
@@ -48,14 +48,27 @@ reset:
 ```
 
 
-Establece el middleware
+### Setting the middleware
 
 ```go
 // Accept-Language (en or es) required
 r.Use(gotvl.SetInstancesTranslate)
 ```
 
-Obtener la instancia
+### Obtaining the instance
 ```go
 tvl, err := gotvl.GetTVLContext(ctx)
 ```
+
+## Contributing
+
+We welcome contributions to Gotvl. To contribute, please follow these steps:
+
+1. Fork the repository
+2. Create a new branch for your feature or bugfix
+3. Write tests for your changes
+4. Implement your feature or bugfix
+5. Commit your changes and push your branch to your forked repository
+6. Open a pull request to this repository with a detailed description of your changes
+
+Please ensure your code follows the Go coding style guidelines and that all tests pass before submitting a pull request. Thank you for contributing to Gotvl!
